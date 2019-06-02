@@ -1,0 +1,33 @@
+<map id="Camera::centerScreenOnPoint" name="Camera::centerScreenOnPoint">
+<area shape="rect" id="node2" href="$iso_math_8cxx.html#abef3481b8248d064e79f9d0b2a27cfe7" title="Check if given coordinates are within map boundaries Checks if coordinates are within map boundaries..." alt="" coords="981,43,1183,69"/>
+<area shape="rect" id="node3" href="$class_settings.html#a98b502cde702826dd5a53f5941d54959" title="Retrieves instance of Singleton class Settings. " alt="" coords="1985,119,2122,145"/>
+<area shape="rect" id="node8" href="$iso_math_8cxx.html#a229d5dd54cd4e1f43ed5911e4fd266d3" title="converts coordinates from isometric to screen space The given isometric coordinates (which contain he..." alt="" coords="271,296,493,323"/>
+<area shape="rect" id="node9" href="$class_engine.html#a8f2ddf432ebcefaac2334d8c244f8a0c" title="Retrieves instance of Singleton class Engine. " alt="" coords="319,245,445,272"/>
+<area shape="rect" id="node32" href="$class_map.html#ab69938ac0e56eb0da1d1701221f3d185" title="Refresh all the map tile textures. " alt="" coords="331,347,433,373"/>
+<area shape="rect" id="node4" href="$class_settings.html#ab7169a6eefce79566dd07db3b1e5e967" title="Settings::Settings" alt="" coords="2200,93,2336,120"/>
+<area shape="rect" id="node5" href="$class_settings.html#adb0042e7d1b48ef2888966b4eaefb751" title="Settings::readFile" alt="" coords="2389,68,2521,95"/>
+<area shape="rect" id="node6" href="$class_settings.html#a85757af9157689d156bc1516380c76c9" title="Settings::~Settings" alt="" coords="2195,144,2341,171"/>
+<area shape="rect" id="node7" href="$class_settings.html#a53285dd5cbd5bfafe155187c74150dde" title="Settings::writeFile" alt="" coords="2201,195,2335,221"/>
+<area shape="rect" id="node10" href="$class_engine.html#a4759ed80f80add5731a7720d9666de56" title="Engine::operator=" alt="" coords="559,499,698,525"/>
+<area shape="rect" id="node11" href="$class_engine.html#a5d355a8e2226878ff38fa34fb5a6d6fd" title="Enable Drawing Layer Enable Drawing Layer (use bitwise OR to add layer) " alt="" coords="553,93,704,120"/>
+<area shape="rect" id="node12" href="$class_engine.html#a153a9d80c28c8948dc2e2bd7acfd9530" title="Disable Drawing Layer Disable Drawing Layer ( Turned off by using bitwise AND with inversed pattern) ..." alt="" coords="552,144,705,171"/>
+<area shape="rect" id="node13" href="$class_engine.html#a154fae115950a1cc08bc1f7bd231d2a2" title="Toggle Drawing Layer Toggle Drawing Layer (use bitwise XOR to toggle layer) " alt="" coords="555,195,703,221"/>
+<area shape="rect" id="node14" href="$class_engine.html#aa7210df73b284c19cd6edcfa99a4532e" title="Increase Height Increases the height of the given map node Calls the according function of the Map ob..." alt="" coords="764,296,933,323"/>
+<area shape="rect" id="node25" href="$class_engine.html#a3e87fa5bbc0de7cde5fe6092ddf21a37" title="Decrease Height Decreases the height of the given map node Calls the according function of the Map ob..." alt="" coords="541,347,716,373"/>
+<area shape="rect" id="node27" href="$class_engine.html#aed0b02ad4a43a8fc71b4084a2b45b612" title="Engine::toggleFullScreen" alt="" coords="1441,487,1620,513"/>
+<area shape="rect" id="node29" href="$class_engine.html#a89f23eaccc126a355d287e1959b4556f" title="Engine::setTileIDOfNode" alt="" coords="541,245,716,272"/>
+<area shape="rect" id="node31" href="$class_engine.html#a2824c5146c900c0d048d97c5e0e0ef69" title="Engine::demolishNode" alt="" coords="999,397,1165,424"/>
+<area shape="rect" id="node15" href="$class_map.html#aba5154a4d917900679a3c0f7ec701561" title="Increase Height Increases the height of the node and checks the surrounding tiles. Either draw a slope sprite or elevate the tile if necessary. " alt="" coords="1005,296,1159,323"/>
+<area shape="rect" id="node16" href="$class_map.html#a05e7d896dc5062af07c9b838600a068d" title="Demolish a node Invokes the tiles demolish function. " alt="" coords="1231,347,1380,373"/>
+<area shape="rect" id="node17" href="$class_map_layers.html#a1d810628821913c499b8348107b66891" title="Check if given Layer is being drawn. " alt="" coords="1439,363,1622,389"/>
+<area shape="rect" id="node18" href="$class_resources_manager.html#a07675a89e82b607b0f001ff9eedaa3ae" title="Retrieves instance of Singleton class Texture Manager. " alt="" coords="1428,312,1633,339"/>
+<area shape="rect" id="node22" href="$class_resources_manager.html#ad84710588e607e440931c6956a14aac7" title="ResourcesManager::getTile\lSurface" alt="" coords="1700,414,1893,455"/>
+<area shape="rect" id="node19" href="$class_resources_manager.html#ac5dbb85c5d0f39dc95c830c63a4b8e8f" title="ResourcesManager::operator=" alt="" coords="1688,363,1905,389"/>
+<area shape="rect" id="node20" href="$class_resources_manager.html#aae2a2032792aaa57862eb9c494ae1cf2" title="ResourcesManager::getUITexture" alt="" coords="1681,195,1912,221"/>
+<area shape="rect" id="node21" href="$class_resources_manager.html#a0df47a965118704fa6366053415a21c1" title="ResourcesManager::getTile\lTexture" alt="" coords="1700,246,1893,287"/>
+<area shape="rect" id="node24" href="$class_resources_manager.html#a0a56e6316b8145494b7d551c29c41d80" title="ResourcesManager::loadTexture" alt="" coords="1685,312,1909,339"/>
+<area shape="rect" id="node23" href="$class_window_manager.html#a18bfae3e2d227c6a673fd5299abc9c4e" title="Retrieves instance of Singleton class WindowManager. " alt="" coords="1960,484,2147,511"/>
+<area shape="rect" id="node26" href="$class_map.html#afb8cc864df90d273a5074872d635dc40" title="Decrease Height Decreases the height of the node and checks the surrounding tiles. Either draw a slope sprite or lower the tile if necessary. " alt="" coords="769,347,928,373"/>
+<area shape="rect" id="node28" href="$class_window_manager.html#a9469bbac86049d97b179a9359425345f" title="WindowManager::toggleFull\lScreen" alt="" coords="1700,479,1893,521"/>
+<area shape="rect" id="node30" href="$class_map.html#ad4c2c2f80eab02ca32a748a62a56da12" title="Set the Tile ID Of Node object Also invokes all necessary texture updates (auto&#45;tiling, slopes, ...) " alt="" coords="769,245,928,272"/>
+</map>

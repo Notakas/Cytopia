@@ -1,0 +1,28 @@
+<map id="MapLayers::isLayerActive" name="MapLayers::isLayerActive">
+<area shape="rect" id="node2" href="$class_map_node.html#aeb5b24dd3643788a9d61035b8c3f0b5f" title="MapNode::getActiveMapNodeData" alt="" coords="236,159,479,186"/>
+<area shape="rect" id="node3" href="$class_map_node.html#a604f1e438222bd6d77a6d59a7b39276a" title="MapNode::demolishNode" alt="" coords="266,210,449,236"/>
+<area shape="rect" id="node4" href="$class_map.html#a05e7d896dc5062af07c9b838600a068d" title="Demolish a node Invokes the tiles demolish function. " alt="" coords="283,260,432,287"/>
+<area shape="rect" id="node24" href="$class_sprite.html#aff433fc35fa9259b5020858cc9749c7c" title="Sprite::render" alt="" coords="302,311,413,338"/>
+<area shape="rect" id="node25" href="$class_sprite.html#a87428873289f8ec84f4b75d9162c9d7c" title="Sprite::getActiveClipRect" alt="" coords="268,362,447,388"/>
+<area shape="rect" id="node26" href="$class_sprite.html#a7376c698bf914312fbcc7c2b8180cbed" title="Sprite::isLayerUsed" alt="" coords="284,412,431,439"/>
+<area shape="rect" id="node27" href="$class_sprite.html#aedfac1c3b8a22c5ae4d97bd9586a6a26" title="Sprite::getActiveDestRect" alt="" coords="265,463,450,490"/>
+<area shape="rect" id="node5" href="$class_engine.html#a2824c5146c900c0d048d97c5e0e0ef69" title="Engine::demolishNode" alt="" coords="939,210,1105,236"/>
+<area shape="rect" id="node20" href="$class_map.html#aba5154a4d917900679a3c0f7ec701561" title="Increase Height Increases the height of the node and checks the surrounding tiles. Either draw a slope sprite or elevate the tile if necessary. " alt="" coords="527,311,680,338"/>
+<area shape="rect" id="node22" href="$class_map.html#afb8cc864df90d273a5074872d635dc40" title="Decrease Height Decreases the height of the node and checks the surrounding tiles. Either draw a slope sprite or lower the tile if necessary. " alt="" coords="728,260,887,287"/>
+<area shape="rect" id="node6" href="$class_engine.html#a8f2ddf432ebcefaac2334d8c244f8a0c" title="Retrieves instance of Singleton class Engine. " alt="" coords="1157,286,1284,312"/>
+<area shape="rect" id="node9" href="$class_event_manager.html#a65ec91fd5016d4f9c4167fb8babed2df" title="EventManager::checkEvents" alt="" coords="2151,336,2354,363"/>
+<area shape="rect" id="node7" href="$class_camera.html#a0a8ee04ccb4f4cc9af52a964cf225f66" title="Camera::increaseZoomLevel" alt="" coords="1609,387,1816,414"/>
+<area shape="rect" id="node10" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="Game::run" alt="" coords="2407,227,2497,254"/>
+<area shape="rect" id="node13" href="$class_camera.html#aeea39f352d5873495dea6f376cf3207e" title="Camera::decreaseZoomLevel" alt="" coords="1607,488,1819,515"/>
+<area shape="rect" id="node14" href="$class_camera.html#adfb240823ff20b97b69459490dbd8dc3" title="Centers camera on given isometric coordinates Centers the camera on the given isometric coordinates..." alt="" coords="1332,438,1549,464"/>
+<area shape="rect" id="node16" href="$iso_math_8hxx.html#ad3c5f070c4a876bc6e8978635d02ce52" title="converts screen space coordinates to isometric space coordinates. To convert screen coordinates in to..." alt="" coords="1876,286,2099,312"/>
+<area shape="rect" id="node17" href="$class_u_i_manager.html#a84dcffaff5331747b8916b7efa486f47" title="Get the UiElements Of aroup get Elements that are in UiGroup (m_uiGroups) " alt="" coords="1344,220,1537,261"/>
+<area shape="rect" id="node19" href="$class_game.html#a5ed7fc5be77080f7f6dd5363f7f007a1" title="Game::mainMenu" alt="" coords="1919,67,2055,94"/>
+<area shape="rect" id="node8" href="$class_camera.html#a1f8ecd427814c5a4970223c2d13b9310" title="Camera::setPinchDistance" alt="" coords="1892,438,2083,464"/>
+<area shape="rect" id="node11" href="$main_8cxx.html#af582d708d899e67ead623eac34a22387" title="protected_main" alt="" coords="2545,147,2668,174"/>
+<area shape="rect" id="node12" href="$main_8cxx.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="2716,147,2771,174"/>
+<area shape="rect" id="node15" href="$class_camera.html#af29da768f8948f3afbf0a9b43530eb1d" title="Centers camera on the middle of the map Centers the camera on the middle of the map. " alt="" coords="2147,460,2359,501"/>
+<area shape="rect" id="node18" href="$class_button_group.html#a295239eeae8b6c52735fe0cc7a093741" title="ButtonGroup::onMouseButtonUp" alt="" coords="1597,227,1828,254"/>
+<area shape="rect" id="node21" href="$class_engine.html#aa7210df73b284c19cd6edcfa99a4532e" title="Increase Height Increases the height of the given map node Calls the according function of the Map ob..." alt="" coords="937,311,1107,338"/>
+<area shape="rect" id="node23" href="$class_engine.html#a3e87fa5bbc0de7cde5fe6092ddf21a37" title="Decrease Height Decreases the height of the given map node Calls the according function of the Map ob..." alt="" coords="935,260,1109,287"/>
+</map>

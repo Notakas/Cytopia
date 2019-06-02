@@ -1,0 +1,11 @@
+<map id="Engine::newGame" name="Engine::newGame">
+<area shape="rect" id="node2" href="$class_settings.html#a98b502cde702826dd5a53f5941d54959" title="Retrieves instance of Singleton class Settings. " alt="" coords="191,107,328,133"/>
+<area shape="rect" id="node7" href="$class_map.html#a482ac34426e8aa66abb46f60ec329402" title="Initialize the Map with node objects Initialize the Map with node objects. " alt="" coords="208,208,311,235"/>
+<area shape="rect" id="node3" href="$class_settings.html#ab7169a6eefce79566dd07db3b1e5e967" title="Settings::Settings" alt="" coords="405,5,541,32"/>
+<area shape="rect" id="node4" href="$class_settings.html#adb0042e7d1b48ef2888966b4eaefb751" title="Settings::readFile" alt="" coords="656,31,788,57"/>
+<area shape="rect" id="node5" href="$class_settings.html#a85757af9157689d156bc1516380c76c9" title="Settings::~Settings" alt="" coords="400,107,547,133"/>
+<area shape="rect" id="node6" href="$class_settings.html#a53285dd5cbd5bfafe155187c74150dde" title="Settings::writeFile" alt="" coords="407,157,540,184"/>
+<area shape="rect" id="node8" href="$class_map_layers.html#a54ce1eeef2a8998a728ac7074efe8787" title="Enable Drawing Layer Enable Drawing Layer (use bitwise OR to add layer) " alt="" coords="385,208,562,235"/>
+<area shape="rect" id="node9" href="$class_terrain_generator.html#adcc251757a1f3a06471a49f17886b8ce" title="TerrainGenerator::generate\lTerrain" alt="" coords="376,259,571,301"/>
+<area shape="rect" id="node10" href="$class_terrain_generator.html#ac94cfaeb9dc89453018399361da5174a" title="TerrainGenerator::loadTerrain\lDataFromJSON" alt="" coords="619,259,825,301"/>
+</map>
