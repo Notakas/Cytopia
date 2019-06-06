@@ -13,8 +13,12 @@ WindowManager::WindowManager()
   {
     LOG(LOG_ERROR) << "Failed to Init SDL\nSDL Error:" << SDL_GetError();
   }
+  
+  // m_useVsync = true ? SDL_RENDERER_PRESENTVSYNC : 0x00;
 
-  m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
+  m_useVsync = Settings::instance().settings.vSync ? SDL_RENDERER_PRESENTVSYNC : 0x00;
+  m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED | m_useVsync);
+
   if (m_renderer == nullptr)
   {
     LOG(LOG_ERROR) << "Failed to create Renderer!\nSDL Error:" << SDL_GetError();

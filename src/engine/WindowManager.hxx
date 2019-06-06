@@ -58,6 +58,8 @@ private:
 
   SDL_Window *m_window = nullptr;
   SDL_Renderer *m_renderer = nullptr;
+  
+  int m_useVsync = 0;
 
   void initializeScreenResolutions();
 

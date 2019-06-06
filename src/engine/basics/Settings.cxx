@@ -60,7 +60,7 @@ void to_json(json &j, const Settings::SettingsStruct &s)
   j = {
       {std::string("Graphics"),
        {
-           {std::string("VSYNC"), s.vSync},
+           {std::string("vSync"), s.vSync},
            {std::string("FullScreen"), s.fullScreen},
            {std::string("FullScreenMode"), s.fullScreenMode},
            {std::string("Resolution"),
@@ -89,7 +89,7 @@ void from_json(const json &j, Settings::SettingsStruct &s)
 {
   s.screenWidth = j["Graphics"]["Resolution"].value("Screen_Width", 800);
   s.screenHeight = j["Graphics"]["Resolution"].value("Screen_Height", 600);
-  s.vSync = j["Graphics"].value("VSYNC", false);
+  s.vSync = j["Graphics"].value("vSync", false);
   s.fullScreen = j["Graphics"].value("FullScreen", false);
   s.fullScreenMode = j["Graphics"].value("FullScreenMode", 0);
   s.mapSize = j["Game"].value("MapSize", 64);
