@@ -8,11 +8,16 @@
 #include "engine/basics/LOG.hxx"
 #include "engine/ui/widgets/Image.hxx"
 #include "engine/basics/Settings.hxx"
+
 #include <noise.h>
 #include <SDL.h>
 
-#ifndef DISABLE_SDL2_MIXER
+#ifdef USE_SDL2_MIXER
 #include "engine/AudioMixer.hxx"
+#endif
+
+#ifdef USE_ANGELSCRIPT
+#include "Scripting/ScriptEngine.hxx"
 #endif
 
 #ifdef MICROPROFILE_ENABLED
@@ -34,7 +39,7 @@ bool Game::initialize()
     return false;
   }
 
-#ifndef DISABLE_SDL2_MIXER
+#ifdef USE_SDL2_MIXER
   if (Mix_Init(MIX_INIT_MP3) == -1)
   {
     LOG(LOG_ERROR) << "Failed to Init SDL_Mixer\nSDL Error:" << Mix_GetError();
@@ -51,8 +56,8 @@ void Game::mainMenu()
 {
   SDL_Event event;
 
-  int screenWidth = Settings::instance().settings.screenWidth;
-  int screenHeight = Settings::instance().settings.screenHeight;
+  int screenWidth = Settings::instance().screenWidth;
+  int screenHeight = Settings::instance().screenHeight;
   bool mainMenuLoop = true;
 
   Image logo;
@@ -171,10 +176,15 @@ void Game::mainMenu()
   }
 }
 
-void Game::run()
+void Game::run(bool SkipMenu)
 {
   Timer benchmarkTimer;
   LOG() << VERSION;
+
+  if (SkipMenu)
+  {
+    Engine::instance().newGame();
+  }
 
   benchmarkTimer.start();
   Engine &engine = Engine::instance();
@@ -187,7 +197,13 @@ void Game::run()
 
   UIManager &uiManager = UIManager::instance();
   uiManager.init();
-#ifndef DISABLE_SDL2_MIXER
+
+#ifdef USE_ANGELSCRIPT
+  ScriptEngine &scriptEngine = ScriptEngine::instance();
+  scriptEngine.init();
+#endif
+
+#ifdef USE_SDL2_MIXER
   AudioMixer audioMixer;
   audioMixer.playMusic();
 #endif
@@ -209,7 +225,7 @@ void Game::run()
 
     // render the tileMap
     if (engine.map != nullptr)
-		engine.map->renderMap();
+      engine.map->renderMap();
 
     // render the ui
     uiManager.drawUI();
@@ -241,7 +257,7 @@ void Game::shutdown()
 {
   TTF_Quit();
 
-#ifndef DISABLE_SDL2_MIXER
+#ifdef USE_SDL2_MIXER
   Mix_Quit();
 #endif
 

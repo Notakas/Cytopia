@@ -28,16 +28,17 @@ void Settings::readFile()
     LOG(LOG_ERROR) << "Error parsing JSON File " << SETTINGS_FILE_NAME;
   }
 
-  settings = _settingsJSONObject;
+  SettingsData data = _settingsJSONObject;
+  *this = data;
 
   // init the actual resolution with the desired resolution
-  settings.currentScreenWidth = settings.screenWidth;
-  settings.currentScreenHeight = settings.screenHeight;
+  currentScreenWidth = screenWidth;
+  currentScreenHeight = screenHeight;
 }
 
 void Settings::writeFile()
 {
-  const json settingsJsonObject = settings;
+  const json settingsJsonObject = *this;
 
   std::string settingsFileName = SDL_GetBasePath();
   settingsFileName.append(SETTINGS_FILE_NAME);
@@ -55,7 +56,7 @@ void Settings::writeFile()
 }
 
 // JSON serializer for Settings struct
-void to_json(json &j, const Settings::SettingsStruct &s)
+void to_json(json &j, const SettingsData &s)
 {
   j = {
       {std::string("Graphics"),
@@ -85,7 +86,7 @@ void to_json(json &j, const Settings::SettingsStruct &s)
 }
 
 // JSON deserializer for Settings struct
-void from_json(const json &j, Settings::SettingsStruct &s)
+void from_json(const json &j, SettingsData &s)
 {
   s.screenWidth = j["Graphics"]["Resolution"].value("Screen_Width", 800);
   s.screenHeight = j["Graphics"]["Resolution"].value("Screen_Height", 600);
@@ -100,7 +101,7 @@ void from_json(const json &j, Settings::SettingsStruct &s)
   s.playMusic = j["Audio"].value("PlayMusic", true);
   s.playSoundEffects = j["Audio"].value("PlaySoundEffects", false);
   s.audioChannels = j["Audio"].value("AudioChannels", 2);
-  s.musicVolume = j["Audio"].value("MusicVolume", 50);
-  s.soundEffectsVolume = j["Audio"].value("SoundEffectsVolume", 100);
+  s.musicVolume = j["Audio"].value("MusicVolume", static_cast<uint8_t>(50));
+  s.soundEffectsVolume = j["Audio"].value("SoundEffectsVolume", static_cast<uint8_t>(100));
   s.buildMenuPosition = j["User Interface"].value("BuildMenu Position", "BOTTOM");
 }

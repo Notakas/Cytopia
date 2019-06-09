@@ -4,25 +4,20 @@
 
 AudioMixer::AudioMixer()
 {
-  Mix_OpenAudio(44100, AUDIO_S16SYS, Settings::instance().settings.audioChannels, 1024);
-  setMusicVolume(Settings::instance().settings.musicVolume);
+  Mix_OpenAudio(44100, AUDIO_S16SYS, Settings::instance().audioChannels, 1024);
+  setMusicVolume(Settings::instance().musicVolume);
 }
 
-void AudioMixer::setMusicVolume(int volume)
+void AudioMixer::setMusicVolume(uint8_t volume) noexcept
 {
-  Mix_VolumeMusic(volume);
-  Settings::instance().settings.musicVolume = volume;
+  volume = Mix_VolumeMusic(volume) & 0xFF;
+  Settings::instance().musicVolume = volume;
 }
 
-void AudioMixer::setSoundEffectVolume(int volume)
-{
-  //Mix_VolumeMusic(volume);
-  Settings::instance().settings.soundEffectsVolume = volume;
-}
+void AudioMixer::setSoundEffectVolume(uint8_t volume) noexcept { Settings::instance().soundEffectsVolume = volume; }
 
-void AudioMixer::playMusic()
+void AudioMixer::playMusic(void) noexcept
 {
-  // TODO: stored audio elements should be moved to the resources class after refactoring
   const std::shared_ptr<Music> themeMusic(new Music);
   m_musicObjects.push_back(themeMusic);
 
@@ -32,13 +27,12 @@ void AudioMixer::playMusic()
   m_musicObjects[0]->play(-1);
 }
 
-void AudioMixer::mute()
+void AudioMixer::mute(void) noexcept
 {
-  //TODO: stop all music stored in the element class after refactoring
   for (const auto &it : m_musicObjects)
   {
     it->stop();
-    Settings::instance().settings.playMusic = false;
-    Settings::instance().settings.playSoundEffects = false;
+    Settings::instance().playMusic = false;
+    Settings::instance().playSoundEffects = false;
   }
 }

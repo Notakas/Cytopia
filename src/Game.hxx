@@ -5,6 +5,8 @@
 #define VERSION 0
 #endif
 
+#include "Scripting/ScriptEngine.hxx"
+
 class Game
 {
 public:
@@ -12,7 +14,7 @@ public:
   virtual ~Game() = default;
 
   virtual bool initialize();
-  virtual void run();
+  virtual void run(bool SkipMenu = false);
   virtual void shutdown();
   virtual void mainMenu();
 };

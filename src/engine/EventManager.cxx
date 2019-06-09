@@ -75,8 +75,8 @@ void EventManager::checkEvents(SDL_Event &event, Engine &engine)
           if (pinchCenterCoords.x == 0 && pinchCenterCoords.y == 0)
           {
             pinchCenterCoords =
-                convertScreenToIsoCoordinates({static_cast<int>(event.mgesture.x * Settings::instance().settings.screenWidth),
-                                               static_cast<int>(event.mgesture.y * Settings::instance().settings.screenHeight)});
+                convertScreenToIsoCoordinates({static_cast<int>(event.mgesture.x * Settings::instance().screenWidth),
+                                               static_cast<int>(event.mgesture.y * Settings::instance().screenHeight)});
           }
           Camera::setPinchDistance(event.mgesture.dDist * 15.0f, pinchCenterCoords.x, pinchCenterCoords.y);
           m_skipLeftClick = true;
@@ -85,10 +85,10 @@ void EventManager::checkEvents(SDL_Event &event, Engine &engine)
 
         if (m_panning)
         {
-          Camera::cameraOffset.x -= static_cast<int>(Settings::instance().settings.screenWidth * event.tfinger.dx);
-          Camera::cameraOffset.y -= static_cast<int>(Settings::instance().settings.screenHeight * event.tfinger.dy);
-          Camera::centerIsoCoordinates = convertScreenToIsoCoordinates(
-              {Settings::instance().settings.screenWidth / 2, Settings::instance().settings.screenHeight / 2});
+          Camera::cameraOffset.x -= static_cast<int>(Settings::instance().screenWidth * event.tfinger.dx);
+          Camera::cameraOffset.y -= static_cast<int>(Settings::instance().screenHeight * event.tfinger.dy);
+          Camera::centerIsoCoordinates =
+              convertScreenToIsoCoordinates({Settings::instance().screenWidth / 2, Settings::instance().screenHeight / 2});
           Engine::instance().map->refresh();
           m_skipLeftClick = true;
           break;
@@ -139,9 +139,9 @@ void EventManager::checkEvents(SDL_Event &event, Engine &engine)
       {
         Camera::cameraOffset.x -= event.motion.xrel;
         Camera::cameraOffset.y -= event.motion.yrel;
-		
-		if (Engine::instance().map != nullptr)
-			Engine::instance().map->refresh();
+
+        if (Engine::instance().map != nullptr)
+          Engine::instance().map->refresh();
       }
       else if (engine.map != nullptr)
       {
@@ -230,8 +230,8 @@ void EventManager::checkEvents(SDL_Event &event, Engine &engine)
     case SDL_MOUSEBUTTONUP:
       if (m_panning)
       {
-        Camera::centerIsoCoordinates = convertScreenToIsoCoordinates(
-            {Settings::instance().settings.screenWidth / 2, Settings::instance().settings.screenHeight / 2});
+        Camera::centerIsoCoordinates =
+            convertScreenToIsoCoordinates({Settings::instance().screenWidth / 2, Settings::instance().screenHeight / 2});
         m_panning = false;
       }
       // reset pinchCenterCoords when fingers are released
@@ -265,7 +265,7 @@ void EventManager::checkEvents(SDL_Event &event, Engine &engine)
         }
         m_highlightedNodes.clear();
 
-		engine.map->unHighlightNode(m_highlitNode);
+        engine.map->unHighlightNode(m_highlitNode);
 
         break;
       }
@@ -340,18 +340,21 @@ void EventManager::checkEvents(SDL_Event &event, Engine &engine)
 
   for (auto &timer : timers)
   {
+    if (timer)
       timer->checkTimeout();
   }
 
-  for (auto &removedTimer : removedTimers)
+  for (std::vector<Timer *>::iterator it = timers.begin(); it != timers.end();)
   {
-      timers.erase(removedTimer);
+    if (!(*it)->isActive())
+    {
+      it = timers.erase(it);
+    }
+    else
+    {
+      ++it;
+    }
   }
-
-  removedTimers.clear();
-
 }
 
-void EventManager::registerTimer(Timer *timer) { timers.insert(timer); }
-
-void EventManager::removeTimer(Timer *timer) { removedTimers.insert(timer); }
+void EventManager::registerTimer(Timer *timer) { timers.push_back(timer); }
